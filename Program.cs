@@ -5,34 +5,52 @@ namespace use
     {
         public static void Main(String[] args)
         {
-            string input;
-            Console.WriteLine("Enter the month");
-            input = Console.ReadLine().ToUpper();
+            int numOne;
+            int numTwo;
+            int sum = 0;
+            Console.WriteLine("(1) Addition");
+            Console.WriteLine("(2) Subtracion");
+            Console.WriteLine("(3) Multiplication");
+            Console.WriteLine("(4) Division");
+            int input = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter value one");
+            numOne = Convert.ToInt32(Console.ReadLine());
+            numTwo = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
-                case "JANUARY":
-                case "MARCH":
-                case "MAY":
-                case "JULY":
-                case "AUGUST":
-                case "OCTORBER":
-                case "DECEMBER":
-                    Console.WriteLine("This month has 31 days");
+                case 1:
+                    sum = numOne + numTwo;
                     break;
-                case "APRIL":
-                case "JUNE":
-                case "SEPTEMBER":
-                case "NOVERBER":
-                    Console.WriteLine("This month has 30 days");
+                case 2:
+                    sum = numOne - numTwo;
                     break;
-                case "FEBRUARY":
-                    Console.WriteLine("This month has 28 days in a non-leap year and 29 days in a leap year");
+                case 3:
+                    sum = numOne * numTwo;
+                    break;
+                case 4:
+                    Console.WriteLine("Do you want to calculate the quotient or remainder");
+                    Console.WriteLine("(1) Quoctient");
+                    Console.WriteLine("(2) Remainder");
+                   
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                
+                    switch (choice)
+                    {
+                        case 1:
+                            sum = numOne / numTwo;
+                            break;
+                        case 2:
+                            sum = numTwo % numTwo;
+                            break;
+                        default:
+                            Console.WriteLine("Incorrect Choice");
+                            break;
+                    }
                     break;
                 default:
-                    Console.WriteLine("Incorrect choice");
+                    Console.WriteLine("Result: " + sum);
                     break;
             }
         }
     }
 }
-
